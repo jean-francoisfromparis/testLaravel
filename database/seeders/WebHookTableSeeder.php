@@ -16,10 +16,13 @@ class WebHookTableSeeder extends Seeder
     {
         $faker = \Faker\Factory::create();
         for ($i = 0; $i < 50; $i++) {
-            WebHook::create([
+            WebHook::create(
+                [
                 'merchantName' => $faker->name,
                 'paymentAmount' => rand(5, 150),
-            ]);
+                'WEBHOOK_SECRET'=>'XXX',
+                ]
+            );
         }
     }
 }

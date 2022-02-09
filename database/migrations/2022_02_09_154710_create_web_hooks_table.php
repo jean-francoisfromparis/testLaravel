@@ -13,12 +13,15 @@ class CreateWebHooksTable extends Migration
      */
     public function up()
     {
-        Schema::create('web_hooks', function (Blueprint $table) {
-            $table->id();
-            $table->string('merchantName');
-            $table->integer('paymentAmount');
-            $table->timestamps();
-        });
+        Schema::create(
+            'web_hooks', function (Blueprint $table) {
+                $table->id();
+                $table->string('merchantName');
+                $table->integer('paymentAmount');
+                $table->string('WEBHOOK_SECRET');
+                $table->timestamps();
+            }
+        );
     }
 
     /**
